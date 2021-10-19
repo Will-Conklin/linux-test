@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker image 'ubuntu'
+    }
 
 
     stages {
         stage('Test') {
             steps {
                 sh'''
-                python --version
+                node --version
                 '''
             }
         }
